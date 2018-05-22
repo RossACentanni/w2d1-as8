@@ -1,0 +1,7 @@
+The SQLiteOpenHelper class aids in creating databases and managing their versions. It allows Content Providers 
+to hold off on opening or upgrading databases until they are needed, so as to not hog resources on system startup. The class
+contains 3 methods that must be implemented before it will work: onCreate, onUpgrade, and optionally onOpen. onCreate is called
+when the database is created for the first time, table creation and initialization should happen here. onUpgrade is called whenever
+the database needs to be updated; this is a good time to do any necessary alterations. onOpen is called when the database has been opened.
+The class takes the following parameters in its constructor: a context, the name of the database file, a CursorFactory for reading/writing,
+an int representing the database's version and (optionally) an error handler.
